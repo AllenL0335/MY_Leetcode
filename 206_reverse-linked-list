@@ -1,0 +1,19 @@
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        if head == None or head.next == None:
+            return head
+        p = head
+        r = p
+        while r is not None:
+            if r.next.next is not None:
+                q = r.next
+                r.next = r.next.next
+                q.next = p
+                p = q
+            else:
+                q = r.next
+                r.next = r.next.next
+                q.next = p
+                p = q
+                break
+        return p
