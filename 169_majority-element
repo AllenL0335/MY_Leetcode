@@ -1,0 +1,13 @@
+class Solution(object):
+    def majorityElement(self, nums):
+        list_1=[]
+        n=len(nums)
+        for i in range(n//2+1):
+            if nums[i]  in list_1:
+                i+=1
+                continue
+            else :
+                list_1.append(nums[i])
+                if nums.count(nums[i])>n//2:
+                    return nums[i]
+
